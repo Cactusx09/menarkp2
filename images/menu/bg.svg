@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="326" height="182" viewBox="0 0 326 182">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1 {
+        fill: #0076be;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="647" y="771" width="326" height="182" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dy="7" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="5.657"/>
+      <feFlood result="flood" flood-opacity="0.45"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="Rectangle_18_copy" data-name="Rectangle 18 copy" class="cls-1" d="M680.257,796.218s68.069-7.857,128.175,27.727c54.039,31.992,130.311-27.727,130.311-27.727a2.134,2.134,0,0,1,2.136,2.133V911.273a2.134,2.134,0,0,1-2.136,2.133H680.257a2.134,2.134,0,0,1-2.136-2.133V798.351A2.134,2.134,0,0,1,680.257,796.218Z" transform="translate(-647 -771)"/>
+</svg>
