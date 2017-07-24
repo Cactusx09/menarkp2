@@ -126,6 +126,20 @@ $(document).ready(function(){
 		});
 	}
 
+	//olimp gallery
+	if($('.s_olimp__gallery').length){
+		$('.s_olimp__gallery').lightGallery({
+			selector: '.s_olimp__gallery_item'
+		});
+	}
+
+	//photo gallery
+	if($('.s_photo__blocks').length){
+		$('.s_photo__blocks').lightGallery({
+			selector: '.s_photo__item'
+		});
+	}
+
 	//mask
 	$('input[name="phone"]').mask("+7 (999) 999-99-99");
 	// validate
@@ -181,6 +195,20 @@ $(document).ready(function(){
 		});
 	});
 
+
+
+
+	if($('.s_lang__slider').length){
+		$('.s_lang__slider').lightSlider({
+			item:1,
+			slideMargin:0,
+			loop: true,
+			auto: true,
+			controls: false,
+			pager: false,
+			pause: 3000
+		});
+	}
 });
 
 //gmap init

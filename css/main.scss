@@ -264,6 +264,32 @@ button{
 		border-color: $p !important;
 	}
 }
+.g_pager{
+	text-align: center;
+	a{
+		font-weight: 700;
+		color: $b;
+		font-size: 1.5rem;
+		text-transform: uppercase;
+		margin-left: 3px;
+		margin-right: 3px;
+		&._current{
+			border-bottom: 3px solid  $b;
+		}
+	}
+	&__arr{
+		&_left,
+		&_right{
+			border: none !important;
+		}
+		&_left{
+			margin-right: 10px !important;
+		}
+		&_right{
+			margin-left: 10px !important;
+		}
+	}
+}
 
 /* ==========================================================
    _header _footer
@@ -794,6 +820,7 @@ button{
 	&__bot{
 		background-repeat: no-repeat;
 		background-position: center;
+		background-size: cover;
 		padding: 140px 0 80px;
 	}
 	&__body{
@@ -1319,7 +1346,332 @@ button{
    _inner
    ========================================================== */
 
-
+//lang.html
+.s_lang{
+	padding: 30px 0 70px;
+	&__head{
+		margin-bottom: 90px;
+		text-align: center;
+		h1{
+			font-weight: 700;
+			color: $b;
+			font-size: 4.5rem;
+			text-transform: uppercase;
+			line-height: 1.1;
+			margin-bottom: 25px;
+			span{
+				font-size: 3rem;
+				display: block;
+				text-align: right;
+				padding-right: 50px;
+			}
+		}
+		h2{
+			font-weight: 700;
+			color: $b;
+			font-size: 2.25rem;
+			padding-left: 150px;
+		}
+	}
+	&__item{
+		@extend ._flex_fs_fs;
+		margin-bottom: 70px;
+		&_img{
+			width: 200px;
+			height: 280px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			box-shadow: inset 0 0 0 7px #f0f0f0,
+				inset 0 0 0 9px $o,
+				0 0 0 2px $o;
+			margin-right: 35px;
+		}
+		&_txt{
+			h4{
+				font-weight: 600;
+				color: $b;
+				font-size: 1.5rem;
+				margin-top: 20px;
+				margin-bottom: 10px;
+			}
+			span{
+				color: #000;
+				font-size: 1.125rem;
+				display: block;
+				font-weight: 600;
+				margin-bottom: 10px;
+			}
+			small{
+				color: #000;
+				font-size: 1.125rem;
+				display: block;
+			}
+		}
+	}
+	&__slider{
+		&_wrp{
+			margin-left: auto;
+			max-width: 544px;
+		}
+		&_item{
+			div{
+				margin: 2px;
+				height: 280px;
+				width: 540px;
+				box-shadow: inset 0 0 0 7px #f0f0f0,
+					inset 0 0 0 9px $o,
+					0 0 0 2px $o;
+			}
+		}
+	}
+	&__contacts{
+		float: right;
+		&_tel{
+			@extend ._flex_fs_fs;
+			margin-bottom: 15px;
+		}
+		p{
+			&:first-of-type{
+				margin-right: 30px;
+			}
+		}
+		p,a{
+			font-weight: 700;
+			color: $b;
+			font-size: 2.25rem;
+			line-height: 1.2;
+		}
+		a{
+			display: block;
+		}
+	}
+}
+//video.html
+.s_video{
+	padding: 50px 0 60px;
+	h1{
+		font-weight: 700;
+		color: $b;
+		font-size: 3rem;
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 65px;
+	}
+	&__body{
+		text-align: center;
+	}
+	&__item{
+		display: inline-block;
+		margin-bottom: 95px;
+		h3{
+			font-weight: 600;
+			color: $b;
+			font-size: 1.5rem;
+			margin-bottom: 35px;
+		}
+		&_video{
+			box-shadow: inset 0 0 0 7px #f0f0f0,
+				inset 0 0 0 9px $o,
+				0 0 0 2px $o;
+			padding: 9px;
+		}
+	}
+}
+//olimp.html
+.s_olimp{
+	padding: 55px 0 110px;
+	&__head{
+		margin-bottom: 55px;
+		h1{
+			font-weight: 700;
+			color: $b;
+			font-size: 3rem;
+			text-transform: uppercase;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		h3{
+			font-weight: 700;
+			color: $b;
+			font-size: 1.125rem;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		p{
+			font-size: 1.125rem;
+			color: #000;
+			margin-bottom: 22px;
+			strong{
+				font-weight: 700;
+			}
+		}
+		a{
+			color: $b;
+			border-bottom: 1px solid  $b;
+		}
+		ul{
+			margin-left: 35px;
+			li{
+				font-size: 1.125rem;
+				color: #000;
+			}
+		}
+	}
+	&__body{
+		h5{
+			font-weight: 700;
+			color: $b;
+			font-size: 1.5rem;
+			text-transform: uppercase;
+			text-align: center;
+			margin-bottom: 70px;
+		}
+	}
+	&__gallery{
+		@extend ._flex_fs_fs;
+		flex-wrap: wrap;
+		margin: -15px;
+		&_item{
+			height: 235px;
+			width: calc(33.333% - 30px);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			cursor: pointer;
+			margin: 15px;
+			box-shadow: inset 0 0 0 7px #f0f0f0,
+				inset 0 0 0 9px $o,
+				0 0 0 2px $o;
+		}
+	}
+}
+//school.html
+.s_school{
+	padding: 50px 0 85px;
+	h1{
+		font-weight: 700;
+		color: $b;
+		font-size: 3rem;
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+	&__body{
+		@extend ._flex_sb_fs;
+	}
+	&__col{
+		width: calc(50% - 50px);
+		h2{
+			font-weight: 700;
+			color: $b;
+			font-size: 1.5rem;
+			text-transform: uppercase;
+			margin-bottom: 45px;
+		}
+		p{
+			font-weight: 400;
+			color: #000;
+			font-size: 1.125rem;
+			margin-bottom: 45px;
+		}
+	}
+	&__img{
+		width: 100%;
+		height: 290px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		box-shadow: inset 0 0 0 7px #f0f0f0,
+			inset 0 0 0 9px $o,
+			0 0 0 2px $o;
+		margin-bottom: 30px;
+	}
+	&__btns{
+		@extend ._flex_sb_c;
+		&_ask{
+			background-color: #fff;
+			color: $b;
+			border: 3px solid  $b;
+		}
+		&_right{
+			line-height: 1.2;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			text-shadow: 0 0.188rem 0.438rem rgba(0, 0, 0, 0.3);
+			strong{
+				font-weight: 800;
+			}
+		}
+	}
+}
+//reviews.html
+.s_inn_reviews{
+	&__head{
+		padding: 55px 0;
+		h1{
+			font-weight: 700;
+			color: $b;
+			font-size: 3rem;
+			text-transform: uppercase;
+			text-align: center;
+		}
+	}
+	.s_parents{
+		&__body{
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			padding-bottom: 35px;
+		}
+		&__blocks{
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			margin: -15px;
+		}
+		&__col{
+			width: calc(33.333% - 0px);
+		}
+		&__item{
+			margin: 15px;
+		}
+	}
+	.g_pager{
+		margin-top: 30px;
+		a{
+			color: #fff;
+			border-color: #fff;
+		}
+	}
+}
+//photo.html
+.s_photo{
+	padding: 50px 0;
+	h1{
+		font-weight: 700;
+		color: $b;
+		font-size: 3rem;
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 85px;
+	}
+	&__blocks{
+		@extend ._flex_sb_s;
+		flex-wrap: wrap;
+	}
+	&__item{
+		width: calc(50% - 20px);
+		height: 315px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		margin-bottom: 40px;
+		cursor: pointer;
+		box-shadow: inset 0 0 0 7px #f0f0f0,
+			inset 0 0 0 9px $o,
+			0 0 0 2px $o;
+	}
+}
 
 .overlay{
 	position: fixed;
@@ -1414,6 +1766,10 @@ button{
 
 @media only screen and (max-width: 1199.5px) {
 
+}
+
+._clear{
+	clear: both;
 }
 
 ::-webkit-scrollbar
