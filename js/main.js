@@ -62,8 +62,23 @@ $(document).ready(function(){
 	}
 
 	//select
-	$('.g_select__head').click(function(){
-		$(this).closest('.g_select').toggleClass('_active');
+	$('.g_select__head').click(function(e){
+		var head = $(this),
+			wrp = head.closest('.g_select');
+		wrp.toggleClass('_active');
+		wrp.find('.g_select__body').scrollTop(0);
+	});
+	$('.g_select._in_form a').click(function(e){
+		e.preventDefault();
+		var item = $(this),
+			text = item.text(),
+			wrp = item.closest('.g_select'),
+			input = wrp.find('input'),
+			current = wrp.find('.g_select__head span');
+		wrp.removeClass('_active');
+		item.addClass('_current').siblings().removeClass('_current');
+		input.text(text);
+		current.text(text);
 	});
 
 	//stat counter
@@ -150,16 +165,23 @@ $(document).ready(function(){
 				form: {required: true},
 				phone: {required: true},
 				mail: {required: true},
-				question: {required: true}
+				question: {required: true},
+				upload: {required: false},
+				surname: {required: true},
+				name: {required: true},
+				conf: {required: true}
 			},
 			messages: {},
 			errorPlacement: function (error, element) {},
 			submitHandler: function (form) {
+				var data = new FormData(it[0]);
 				$.ajax({
 					url: '../mail.php',
 					type: 'POST',
 					data: it.serialize(),
 					cache: false,
+					processData: false,
+					contentType: false,
 					success: function( respond, textStatus, jqXHR ){
 						$('.popup').removeClass('_visible');
 						var name = 'thnx'
@@ -195,7 +217,56 @@ $(document).ready(function(){
 		});
 	});
 
+	//file input
+	if($('input[type=file]').length){
+		$("input[type=file]").each(function(){
+			var input = $(this),
+				text = input.data('text'),
+				wrapper = input.closest('.NFI-wrapper'),
+				filename = wrapper.find('.NFI-filename'),
+				button = wrapper.find('.NFI-button'),
+				close = wrapper.find('.close-input'),
+				current = wrapper.find('.NFI-current');
+			input.nicefileinput({
+				label : text
+			});
+			filename.val(text);
+			$('.NFI-wrapper').append('<div class="close-input"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M18 1.4L16.6 0 9 7.6 1.4 0 0 1.4 7.6 9 0 16.6 1.4 18 9 10.4 16.6 18 18 16.6 10.4 9 18 1.4Z" fill="rgb(204, 204, 204)"/></svg></div>');
+			button.wrapInner('<span></span>');
+		});
+		$("input[type=file]").on('change',function(){
+			var input = $(this),
+				text = input.data('text'),
+				wrapper = input.closest('.NFI-wrapper'),
+				filename = wrapper.find('.NFI-filename'),
+				button = wrapper.find('.NFI-button'),
+				close = wrapper.find('.close-input'),
+				current = wrapper.find('.NFI-current');
 
+			if(input.val()==""){
+				input.val(text).removeClass('_active');
+				button.removeClass('hide-for-pre');
+				$('.close-input').hide();
+			}else{
+				button.addClass('hide-for-pre');
+				filename.addClass('_active');
+				close.show();
+			}
+			close.addClass('big');
+		});
+		$('.close-input').click(function(){
+			var close = $(this),
+				wrapper = close.closest('.NFI-wrapper'),
+				input = wrapper.find('input[type=file]'),
+				text = input.data('text'),
+				filename = wrapper.find('.NFI-filename'),
+				button = wrapper.find('.NFI-button'),
+				current = wrapper.find('.NFI-current');
+			$('.close-input').hide();
+			filename.val(text).removeClass('_active');
+			button.removeClass('hide-for-pre');
+		});
+	}
 
 
 	if($('.s_lang__slider').length){
