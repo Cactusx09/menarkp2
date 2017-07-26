@@ -4,6 +4,12 @@ $(document).ready(function(){
 		$(this).toggleClass('_active');
 	});
 
+	//header hamb
+	$('.header__hamb_wrp').click(function(){
+		$(this).find('.header__hamb').toggleClass('_active');
+		$('nav').toggleClass('_active');
+	});
+
 	//main slider
 	if($('.s_main__slider').length){
 		var sl_main = $('.s_main__slider').lightSlider({
@@ -13,7 +19,16 @@ $(document).ready(function(){
 			controls: false,
 			auto: true,
 			loop: true,
-			pause: 2500
+			pause: 2500,
+			adaptiveHeight: true,
+			responsive:[
+				{
+					breakpoint: 1000,
+					settings:{
+						auto: false
+					}
+				}
+			]
 		});
 	}
 
@@ -25,7 +40,15 @@ $(document).ready(function(){
 			slideMove: 1,
 			pager: false,
 			controls: false,
-			loop: true
+			loop: true,
+			responsive:[
+				{
+					breakpoint: 460,
+					settings:{
+						item: 4
+					}
+				}
+			]
 		});
 		$('.s_reviews__arr_left').click(function(){
 			sl_reviews.goToPrevSlide();
